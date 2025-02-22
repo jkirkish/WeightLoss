@@ -1,6 +1,6 @@
 "use client"
 
-import type React from "react"
+import * as React from "react"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -21,7 +21,13 @@ export default function Login() {
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
         <h1 className="text-2xl font-bold mb-4">Login</h1>
-        <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <Input 
+          type="email" 
+          placeholder="Email" 
+          value={email} 
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} 
+          required 
+        />
         <Input
           type="password"
           placeholder="Password"
